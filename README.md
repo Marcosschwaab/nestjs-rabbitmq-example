@@ -13,7 +13,7 @@ This is a simple NestJS project that demonstrates how to use RabbitMQ to publish
 1. **Clone the repository:**
 
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:Marcosschwaab/nestjs-rabbitmq-example.git
    ```
 
 2. **Navigate to the project directory:**
@@ -28,7 +28,13 @@ This is a simple NestJS project that demonstrates how to use RabbitMQ to publish
    npm install
    ```
 
-4. **Run the application:**
+4. **Start the RabbitMQ Docker container:**
+
+   ```bash
+   docker run -d --hostname my-rabbit --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+   ```
+
+5. **Run the application:**
 
    ```bash
    npm run start
