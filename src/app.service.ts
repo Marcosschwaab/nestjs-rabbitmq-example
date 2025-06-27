@@ -8,7 +8,7 @@ export class AppService {
     return 'Hello World!';
   }
 
-  async sendMessage() {
-    this.amqpConnection.publish('exchange1', 'rpc-key', { message: 'Hello from RabbitMQ' });
+  async sendMessage(message: string) {
+    this.amqpConnection.publish('exchange1', 'rpc-key', { message });
   }
 }

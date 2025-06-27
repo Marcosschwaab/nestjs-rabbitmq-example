@@ -38,10 +38,10 @@ The application will be running on `http://localhost:3001`.
 
 ## Usage
 
-To send a message to the RabbitMQ queue, you can send a POST request to the `/send` endpoint:
+To send a message to the RabbitMQ queue, you can send a POST request to the `/send` endpoint with a JSON body containing a `message` field:
 
 ```bash
-cURL -X POST http://localhost:3001/send
+curl -X POST -H "Content-Type: application/json" -d '{"message": "Your custom message here"}' http://localhost:3001/send
 ```
 
 After sending the request, you should see a log in the console of the NestJS application indicating that a message has been received.

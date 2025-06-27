@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -11,7 +11,7 @@ export class AppController {
   }
 
   @Post('send')
-  async sendMessage() {
-    return this.appService.sendMessage();
+  async sendMessage(@Body('message') message: string) {
+    return this.appService.sendMessage(message);
   }
 }
